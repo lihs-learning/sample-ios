@@ -12,12 +12,19 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.addSubview({() -> UIView in
-            let label = UILabel.init()
-            label.text = "你好，World"
-            label.sizeToFit()
-            label.center = CGPoint(x: self.view.frame.size.width / 2, y: self.view.frame.size.height / 2)
-            return label
-        }())
+        let view = UIView(frame: CGRect(
+            x: 100, y: 100,
+            width: 100, height: 100)
+        )
+        view.backgroundColor = .red
+        
+        let view2 = UIView(frame: CGRect(
+            x: 150, y: 150,
+            width: 100, height: 100)
+        )
+        view2.backgroundColor = .green
+        
+        self.view.addSubview(view)
+        self.view.addSubview(view2)
     }
 }
