@@ -8,10 +8,11 @@
 
 import UIKit
 
+// MARK: TestView
 class TestView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
-        print("0. init")
+        print("view: 0. init")
     }
     
     required init?(coder: NSCoder) {
@@ -20,26 +21,56 @@ class TestView: UIView {
     
     override func willMove(toSuperview newSuperview: UIView?) {
         super.willMove(toSuperview: newSuperview)
-        print("1. will move to new superview")
+        print("view: 1. will move to new superview")
     }
     
     override func didMoveToSuperview() {
         super.didMoveToSuperview()
-        print("2. did move to new superview")
+        print("view: 2. did move to new superview")
     }
     
     override func willMove(toWindow newWindow: UIWindow?) {
         super.willMove(toWindow: newWindow)
-        print("3. will move to new window")
+        print("view: 3. will move to new window")
     }
     
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        print("4. did move to new window")
+        print("view: 4. did move to new window")
     }
 }
 
+// MARK: ViewController
 class ViewController: UIViewController {
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+        print("view controller: 0. init")
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view controller: 1. default view will appear")
+    }
+
+    override func viewDidAppear(_ animated: Bool){
+        super.viewDidAppear(animated)
+        print("view controller: 2. default view did appear")
+    }
+
+    override func viewWillDisappear(_ animated: Bool){
+        super.viewWillDisappear(animated)
+        print("view controller: 3. default view will disappear")
+    }
+
+    override func viewDidDisappear(_ animated: Bool){
+        super.viewDidDisappear(animated)
+        print("view controller: 4. default view did disappear")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -51,3 +82,13 @@ class ViewController: UIViewController {
         self.view.addSubview(view)
     }
 }
+
+// MARK: Life Cycle Print RESULT
+// view controller: 0. init
+// view: 0. init
+// view: 1. will move to new superview
+// view: 2. did move to new superview
+// view controller: 1. default view will appear
+// view: 3. will move to new window
+// view: 4. did move to new window
+// view controller: 2. default view did appear
