@@ -58,7 +58,6 @@
 			children = (
 				A3386BAB23CF1546004BBA97 /* Procedure */,
 				A3386B9723CEEEEE004BBA97 /* AppDelegate.swift */,
-				A3386B9B23CEEEEE004BBA97 /* ViewController.swift */,
 				A3386B9D23CEEEF2004BBA97 /* Assets.xcassets */,
 				A3386BA223CEEEF2004BBA97 /* LaunchScreen.storyboard */,
 				A3386BA523CEEEF2004BBA97 /* Info.plist */,
@@ -79,6 +78,7 @@
 			isa = PBXGroup;
 			children = (
 				A3386BAC23CF1598004BBA97 /* MainViewController.swift */,
+				A3386B9B23CEEEEE004BBA97 /* ViewController.swift */,
 			);
 			path = Procedure;
 			sourceTree = "<group>";

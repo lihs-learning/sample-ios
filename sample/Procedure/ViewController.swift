@@ -80,15 +80,19 @@ class ViewController: UIViewController {
         )
         view.backgroundColor = .red
         self.view.addSubview(view)
+        
+        let tapGesture = UITapGestureRecognizer(
+            target: self, action: #selector(pushController))
+        view.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc func pushController() {
+        let viewController = UIViewController()
+        viewController.view.backgroundColor = .white
+        viewController.navigationItem.title = "内容"
+        viewController.navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "右侧标题", style: .plain, target: self, action: nil)
+        
+        self.navigationController?.pushViewController(viewController, animated: true)
     }
 }
-
-// MARK: Life Cycle Print RESULT
-// view controller: 0. init
-// view: 0. init
-// view: 1. will move to new superview
-// view: 2. did move to new superview
-// view controller: 1. default view will appear
-// view: 3. will move to new window
-// view: 4. did move to new window
-// view controller: 2. default view did appear

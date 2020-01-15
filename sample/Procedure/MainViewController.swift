@@ -16,8 +16,7 @@ class MainViewController: UITabBarController {
     }
     
     func createSubviewContollers() {
-        let discoverViewController = UIViewController()
-        discoverViewController.view.backgroundColor = .red
+        let discoverViewController = UINavigationController(rootViewController: ViewController())
         discoverViewController.tabBarItem.title = "发现"
         
         let productViewController = UIViewController()
