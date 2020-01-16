@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UITabBarController {
+class MainViewController: UINavigationController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -16,7 +16,9 @@ class MainViewController: UITabBarController {
     }
     
     func createSubviewContollers() {
-        let discoverViewController = UINavigationController(rootViewController: ViewController())
+        let tabBarController = UITabBarController()
+        
+        let discoverViewController = ViewController()
         discoverViewController.tabBarItem.title = "发现"
         
         let productViewController = UIViewController()
@@ -26,8 +28,10 @@ class MainViewController: UITabBarController {
         let meViewController = UIViewController()
         meViewController.view.backgroundColor = .green
         meViewController.tabBarItem.title = "我"
+
+        self.setViewControllers([tabBarController], animated: true)
         
-        setViewControllers([
+        tabBarController.setViewControllers([
             discoverViewController,
             productViewController,
             meViewController
