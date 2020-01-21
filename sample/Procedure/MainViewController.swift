@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MainViewController: UINavigationController {
+class MainViewController: UINavigationController, UITabBarControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,6 +29,8 @@ class MainViewController: UINavigationController {
         meViewController.view.backgroundColor = .green
         meViewController.tabBarItem.title = "我"
 
+        tabBarController.delegate = self
+        
         self.setViewControllers([tabBarController], animated: true)
         
         tabBarController.setViewControllers([
@@ -36,5 +38,9 @@ class MainViewController: UINavigationController {
             productViewController,
             meViewController
         ], animated: true)
+    }
+    
+    func tabBarController(_ tabBarController: UITabBarController, didSelect viewController: UIViewController) {
+        print("did select")
     }
 }
