@@ -24,9 +24,14 @@ class TableViewController: UIViewController, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let tableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "id")
-        tableViewCell.textLabel?.text = "主标题"
-        tableViewCell.detailTextLabel?.text = "副标题"
-        return tableViewCell
+        var tableViewCell = tableView.dequeueReusableCell(withIdentifier: "id")
+        
+        if tableViewCell == nil {
+            tableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "id")
+        }
+
+        tableViewCell?.textLabel?.text = "主标题"
+        tableViewCell?.detailTextLabel?.text = "副标题"
+        return tableViewCell!
     }
 }
