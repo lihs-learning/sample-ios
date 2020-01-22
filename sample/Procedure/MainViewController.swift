@@ -21,8 +21,7 @@ class MainViewController: UINavigationController, UITabBarControllerDelegate {
         let newsViewController = ViewController()
         newsViewController.tabBarItem.title = "新闻"
         
-        let videosViewController = UIViewController()
-        videosViewController.view.backgroundColor = .yellow
+        let videosViewController = CollectionViewController()
         videosViewController.tabBarItem.title = "视频"
         
         let recommandViewController = TableViewController()

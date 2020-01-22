@@ -14,6 +14,7 @@
 		A3386BA423CEEEF2004BBA97 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3386BA223CEEEF2004BBA97 /* LaunchScreen.storyboard */; };
 		A3386BAD23CF1598004BBA97 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3386BAC23CF1598004BBA97 /* MainViewController.swift */; };
 		A3C4048E23D830AB00994C89 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4048D23D830AA00994C89 /* TableViewController.swift */; };
+		A3C4049023D8446B00994C89 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3C4048F23D8446B00994C89 /* CollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		A3386BA523CEEEF2004BBA97 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3386BAC23CF1598004BBA97 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		A3C4048D23D830AA00994C89 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A3C4048F23D8446B00994C89 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +84,7 @@
 				A3386BAC23CF1598004BBA97 /* MainViewController.swift */,
 				A3386B9B23CEEEEE004BBA97 /* ViewController.swift */,
 				A3C4048D23D830AA00994C89 /* TableViewController.swift */,
+				A3C4048F23D8446B00994C89 /* CollectionViewController.swift */,
 			);
 			path = Procedure;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 				A3386B9823CEEEEE004BBA97 /* AppDelegate.swift in Sources */,
 				A3386B9C23CEEEEE004BBA97 /* ViewController.swift in Sources */,
 				A3C4048E23D830AB00994C89 /* TableViewController.swift in Sources */,
+				A3C4049023D8446B00994C89 /* CollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
