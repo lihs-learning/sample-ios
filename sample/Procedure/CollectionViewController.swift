@@ -8,12 +8,15 @@
 
 import UIKit
 
-class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+class CollectionViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
         let flowLayout = UICollectionViewFlowLayout()
+        flowLayout.minimumLineSpacing = 10
+        flowLayout.minimumInteritemSpacing = 10
+        flowLayout.itemSize = CGSize(width: (self.view.frame.size.width - 10) / 2, height: 300)
         
         let collectionView = UICollectionView(frame: self.view.bounds, collectionViewLayout: flowLayout)
         collectionView.dataSource = self
@@ -26,7 +29,7 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
     
     // MARK: UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 200
+        return 20
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -41,5 +44,14 @@ class CollectionViewController: UIViewController, UICollectionViewDataSource, UI
         controller.view.backgroundColor = .white
         controller.title = "\(indexPath.item)"
         self.navigationController?.pushViewController(controller, animated: true)
+    }
+    
+    // MARK: UICollectionViewDelegateFlowLayout
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        if indexPath.item % 3 == 0 {
+            return CGSize(width: self.view.frame.size.width, height: 100)
+        } else {
+            return CGSize(width: (self.view.frame.size.width - 10) / 2, height: 300)
+        }
     }
 }
