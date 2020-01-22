@@ -18,11 +18,15 @@ class MainViewController: UINavigationController, UITabBarControllerDelegate {
     func createSubviewContollers() {
         let tabBarController = UITabBarController()
         
-        let discoverViewController = ViewController()
-        discoverViewController.tabBarItem.title = "发现"
+        let newsViewController = ViewController()
+        newsViewController.tabBarItem.title = "新闻"
         
-        let productViewController = TableViewController()
-        productViewController.tabBarItem.title = "制作"
+        let videosViewController = UIViewController()
+        videosViewController.view.backgroundColor = .yellow
+        videosViewController.tabBarItem.title = "视频"
+        
+        let recommandViewController = TableViewController()
+        recommandViewController.tabBarItem.title = "推荐"
         
         let meViewController = UIViewController()
         meViewController.view.backgroundColor = .green
@@ -33,8 +37,9 @@ class MainViewController: UINavigationController, UITabBarControllerDelegate {
         self.setViewControllers([tabBarController], animated: true)
         
         tabBarController.setViewControllers([
-            discoverViewController,
-            productViewController,
+            newsViewController,
+            videosViewController,
+            recommandViewController,
             meViewController
         ], animated: true)
     }
