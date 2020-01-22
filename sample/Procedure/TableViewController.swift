@@ -8,17 +8,20 @@
 
 import UIKit
 
-class TableViewController: UIViewController, UITableViewDataSource {
+class TableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
         
         let tableView = UITableView(frame: self.view.bounds)
         tableView.dataSource = self
+        tableView.delegate = self
 
         self.view.addSubview(tableView)
     }
     
+    
+    // MARK: UITableViewDataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 20
     }
@@ -30,8 +33,20 @@ class TableViewController: UIViewController, UITableViewDataSource {
             tableViewCell = UITableViewCell(style: .subtitle, reuseIdentifier: "id")
         }
 
-        tableViewCell?.textLabel?.text = "主标题"
+        tableViewCell?.textLabel?.text = "主标题 - \(indexPath.row)"
         tableViewCell?.detailTextLabel?.text = "副标题"
         return tableViewCell!
+    }
+    
+    // MARK: UITableViewDelegate
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = UIViewController()
+        controller.view.backgroundColor = .white
+        controller.title = "\(indexPath.row)"
+        self.navigationController?.pushViewController(controller, animated: true)
     }
 }
