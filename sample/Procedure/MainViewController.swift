@@ -21,8 +21,7 @@ class MainViewController: UINavigationController, UITabBarControllerDelegate {
         let discoverViewController = ViewController()
         discoverViewController.tabBarItem.title = "发现"
         
-        let productViewController = UIViewController()
-        productViewController.view.backgroundColor = .yellow
+        let productViewController = TableViewController()
         productViewController.tabBarItem.title = "制作"
         
         let meViewController = UIViewController()
