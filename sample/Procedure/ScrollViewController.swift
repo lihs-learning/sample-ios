@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController {
+class ScrollViewController: UIViewController, UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -16,6 +16,7 @@ class ScrollViewController: UIViewController {
         let scrollView = UIScrollView(frame: self.view.bounds)
         scrollView.backgroundColor = .white
         scrollView.contentSize = CGSize(width: 5 * self.view.bounds.width, height: self.view.bounds.height)
+        scrollView.delegate = self
         
 //        scrollView.showsHorizontalScrollIndicator = false
         let collorArr:[UIColor] = [.red, .blue, .yellow, .lightGray, .gray]
@@ -31,5 +32,26 @@ class ScrollViewController: UIViewController {
 //        scrollView.isPagingEnabled = true
         
         self.view.addSubview(scrollView)
+    }
+    
+    // MARK: UIScrollViewDelegate
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        print("滚动")
+    }
+    
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        print("开始拖拽")
+    }
+    
+    func scrollViewEndBeginDragging(_ scrollView: UIScrollView) {
+        print("结束拖拽")
+    }
+    
+    func scrollViewWillBeginDecelerating(_ scrollView: UIScrollView) {
+        print("开始减速")
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        print("结束减速")
     }
 }
