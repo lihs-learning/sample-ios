@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A332807F23E9333A00DCBD4C /* ScrollViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A332807E23E9333A00DCBD4C /* ScrollViewController.swift */; };
 		A3386B9823CEEEEE004BBA97 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3386B9723CEEEEE004BBA97 /* AppDelegate.swift */; };
 		A3386B9C23CEEEEE004BBA97 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3386B9B23CEEEEE004BBA97 /* ViewController.swift */; };
 		A3386B9E23CEEEF2004BBA97 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3386B9D23CEEEF2004BBA97 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A332807E23E9333A00DCBD4C /* ScrollViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewController.swift; sourceTree = "<group>"; };
 		A3386B9423CEEEEE004BBA97 /* sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3386B9723CEEEEE004BBA97 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3386B9B23CEEEEE004BBA97 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 				A3386B9B23CEEEEE004BBA97 /* ViewController.swift */,
 				A3C4048D23D830AA00994C89 /* TableViewController.swift */,
 				A3C4048F23D8446B00994C89 /* CollectionViewController.swift */,
+				A332807E23E9333A00DCBD4C /* ScrollViewController.swift */,
 			);
 			path = Procedure;
 			sourceTree = "<group>";
@@ -161,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3386BAD23CF1598004BBA97 /* MainViewController.swift in Sources */,
+				A332807F23E9333A00DCBD4C /* ScrollViewController.swift in Sources */,
 				A3386B9823CEEEEE004BBA97 /* AppDelegate.swift in Sources */,
 				A3386B9C23CEEEEE004BBA97 /* ViewController.swift in Sources */,
 				A3C4048E23D830AB00994C89 /* TableViewController.swift in Sources */,

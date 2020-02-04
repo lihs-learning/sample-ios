@@ -27,8 +27,7 @@ class MainViewController: UINavigationController, UITabBarControllerDelegate {
         let recommandViewController = TableViewController()
         recommandViewController.tabBarItem.title = "推荐"
         
-        let meViewController = UIViewController()
-        meViewController.view.backgroundColor = .green
+        let meViewController = ScrollViewController()
         meViewController.tabBarItem.title = "我"
 
         tabBarController.delegate = self
