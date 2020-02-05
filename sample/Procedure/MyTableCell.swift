@@ -30,6 +30,12 @@ class MyTableCell: UITableViewCell {
         l.font = UIFont.systemFont(ofSize: 12)
         return l
     }()
+    
+    private lazy var rightImage: UIImageView = {
+        let i = UIImageView(frame: CGRect(x: 315, y: 15, width: 50, height: 50))
+        i.backgroundColor = .red
+        return i
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -37,6 +43,8 @@ class MyTableCell: UITableViewCell {
         self.contentView.addSubview(sourceLable)
         self.contentView.addSubview(commentNumLable)
         self.contentView.addSubview(timeLable)
+
+        self.contentView.addSubview(rightImage)
     }
     
     required init?(coder: NSCoder) {
@@ -64,6 +72,8 @@ class MyTableCell: UITableViewCell {
             y: timeLable.frame.origin.y,
             width: timeLable.frame.width,
             height: timeLable.frame.height)
+        
+//        rightImage.image = UIImage.init(named: "")
     }
     
     override func awakeFromNib() {
