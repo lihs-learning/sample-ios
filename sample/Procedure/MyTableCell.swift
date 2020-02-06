@@ -36,6 +36,14 @@ class MyTableCell: UITableViewCell {
         i.backgroundColor = .red
         return i
     }()
+    
+    private lazy var closeBtn: UIButton = {
+        let b = UIButton(frame: CGRect(x: 290, y: 80, width: 20, height: 15))
+        b.backgroundColor = .blue
+        b.setTitle("X", for: .normal)
+        b.setTitle("V", for: .highlighted)
+        return b
+    }()
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -45,6 +53,8 @@ class MyTableCell: UITableViewCell {
         self.contentView.addSubview(timeLable)
 
         self.contentView.addSubview(rightImage)
+        
+        self.contentView.addSubview(closeBtn)
     }
     
     required init?(coder: NSCoder) {
