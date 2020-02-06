@@ -43,4 +43,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 115
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let controller = TableCellDetail()
+        controller.view.backgroundColor = .white
+        controller.title = "\(indexPath.item)"
+        self.navigationController?.pushViewController(controller, animated: true)
+    }
 }
