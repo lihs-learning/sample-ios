@@ -42,6 +42,7 @@ class MyTableCell: UITableViewCell {
         b.backgroundColor = .blue
         b.setTitle("X", for: .normal)
         b.setTitle("V", for: .highlighted)
+        b.addTarget(self, action: #selector(tapCloseBtn), for: .touchUpInside)
         return b
     }()
 
@@ -86,6 +87,10 @@ class MyTableCell: UITableViewCell {
 //        rightImage.image = UIImage.init(named: "")
     }
     
+    @objc func tapCloseBtn() {
+        print("tap close button")
+    }
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
