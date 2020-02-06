@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ScrollViewController: UIViewController, UIScrollViewDelegate {
+class ScrollViewController: UIViewController, UIScrollViewDelegate, UIGestureRecognizerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .white
@@ -32,6 +32,24 @@ class ScrollViewController: UIViewController, UIScrollViewDelegate {
 //        scrollView.isPagingEnabled = true
         
         self.view.addSubview(scrollView)
+        
+        let tappableView = UIView(frame: CGRect(x: 200, y: 200, width: 100, height: 100))
+        tappableView.backgroundColor = .yellow
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapView))
+        tapGesture.delegate = self
+        
+        tappableView.addGestureRecognizer(tapGesture)
+        self.view.addSubview(tappableView)
+    }
+    
+    // MARK: UIGestureRecognizerDelegate
+    func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    // MARK: Custom Gesture Recognizer
+    @objc func tapView() {
+        print("tap gesture recognized")
     }
     
     // MARK: UIScrollViewDelegate
